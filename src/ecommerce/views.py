@@ -8,12 +8,12 @@ def home_page(request):
     # print(request.session.get("first_name", "Unknown"))
     # request.session['first_name']
     context = {
-        "title":"Hello World!",
+        "title":"Home",
         "content":" Welcome to the homepage.",
 
     }
     if request.user.is_authenticated():
-        context["premium_content"] = "YEAHHHHHH"
+        context["premium_content"] = "Thanks for being a member! Enjoy exclusive offers."
     return render(request, "home_page.html", context)
 
 def about_page(request):
